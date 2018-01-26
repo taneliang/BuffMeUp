@@ -1,0 +1,8 @@
+{
+  "name": "hax",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:taneliang/hax.git",
+  "author": "",
+  "license": "MIT"
+}
