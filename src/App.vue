@@ -14,28 +14,22 @@
           <div class="collapse navbar-collapse" id="collapse-menu">
              <ul class="nav navbar-nav">
                 <li><a href="#buffets">Today</a></li> <!-- #buffets should be renamed to #today -->
-                <li><a href="#history">History</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#post">Post</a></li>
+                <li><router-link to="/history">History</router-link></li>
+                <li><router-link to="/faq">FAQ</router-link></li>
+                <li><router-link to="/post">Post</router-link></li>
              </ul>
           </div>
        </div>
     </div>
     <div class="container" style="padding-top: 65px;">
-      <buffets></buffets>
-      <subform></subform>
-      <faq></faq>
+      <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
-import Faq from "./Faq.vue";
-import Buffets from "./Buffets.vue";
-import SubmissionForm from "./SubmissionForm.vue";
 
 export default {
   name: "app",
-  components: { Faq, Buffets, subform: SubmissionForm }
 };
 </script>
