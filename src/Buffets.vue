@@ -12,15 +12,18 @@ import BuffetDetail from "./BuffetDetail.vue";
 export default {
   name: "buffets",
   data() {
-    db
-      .collection("Buffets")
-      .get()
-      .then(
-        querySnapshot => (this.buffets = querySnapshot.docs.map(d => d.data()))
-      );
     return {
-      buffets: []
+      buffets: [],
+      queryUnsubscribe: db
+        .collection("Buffets")
+        .onSnapshot(
+          querySnapshot =>
+            (this.buffets = querySnapshot.docs.map(d => d.data()))
+        )
     };
+  },
+  destroyed() {
+    this.queryUnsubscribe();
   },
   components: { BuffetDetail }
 };
