@@ -12,7 +12,7 @@ const routes = [
   { path: "/faq", component: Faq },
   { path: "/post", component: SubmissionForm }
 ];
-const router = new VueRouter({ routes });
+const router = new VueRouter({ routes, mode: "history" });
 
 new Vue({
   el: "#app",
