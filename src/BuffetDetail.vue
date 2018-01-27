@@ -5,7 +5,7 @@
     <p>Is food halal: {{buffet.halal}}</p>
     <p>Amount of food left (0-1): {{buffet.foodremaining}}</p>
     <p>Buffet still available: {{buffet.open}}</p>
-    <p>Clearing time: {{buffet.time.toLocaleString()}}</p>
+    <p>Clearing time: {{buffet.time && buffet.time.toLocaleString()}}</p>
   </div>
 </template>
 
