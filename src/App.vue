@@ -14,7 +14,7 @@
           <div class="collapse navbar-collapse" id="collapse-menu">
              <ul class="nav navbar-nav">
                 <li><a href="#buffets">Today</a></li> <!-- #buffets should be renamed to #today -->
-                <li><router-link to="/history">History</router-link></li>
+                <li><router-link to="/buffets">Buffets</router-link></li>
                 <li><router-link to="/faq">FAQ</router-link></li>
                 <li><router-link to="/post">Post</router-link></li>
              </ul>

@@ -7,7 +7,8 @@ import SubmissionForm from "./SubmissionForm.vue";
 Vue.use(VueRouter);
 
 const routes = [
-  { path: "/history", component: Buffets },
+  { path: "*", redirect: "/buffets" },
+  { path: "/buffets", component: Buffets },
   { path: "/faq", component: Faq },
   { path: "/post", component: SubmissionForm }
 ];
