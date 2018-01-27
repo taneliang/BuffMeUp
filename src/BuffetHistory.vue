@@ -1,7 +1,7 @@
 <template>
   <div id="history">
     <h1>Past Buffets</h1>
-    <buffet-detail v-for="buffet in buffets" v-bind:buffet="buffet" v-bind:key="buffet.id"></buffet-detail>
+    <buffet-detail v-for="buffet in buffets" v-bind:buffet="buffet.obj" v-bind:buffet-id="buffet.id" v-bind:key="buffet.id"></buffet-detail>
   </div>
 </template>
 
@@ -16,12 +16,13 @@ export default {
   data() {
     return {
       buffets: [],
-      queryUnsubscribe: db
-        .collection("Buffets")
-        .onSnapshot(
-          querySnapshot =>
-            (this.buffets = querySnapshot.docs.map(d => d.data()))
-        )
+      queryUnsubscribe: db.collection("Buffets").onSnapshot(
+        querySnapshot =>
+          (this.buffets = querySnapshot.docs.map(d => ({
+            id: d.id,
+            obj: d.data()
+          })))
+      )
     };
   },
   destroyed() {
