@@ -2,7 +2,7 @@
   <div id="buffets">
     <h2>===Available Buffets===</h2>
     <!-- Buffets here -->
-    <p>{{ hhh.length }}</p>
+    <p>{{ buffets.length }}</p>
   </div>
 </template>
 
@@ -11,15 +11,14 @@ import db from "./datab";
 export default {
   name: "buffets",
   data() {
+    db
+      .collection("Buffets")
+      .get()
+      .then(
+        querySnapshot => (this.buffets = querySnapshot.docs.map(d => d.data()))
+      );
     return {
-      hhh: db
-        .collection("Buffets")
-        .get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
-            console.log(`${doc.id} => ${doc.data()}`);
-          });
-        })
+      buffets: []
     };
   }
 };
