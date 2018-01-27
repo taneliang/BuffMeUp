@@ -17,6 +17,7 @@
                 <li><router-link to="/history">History</router-link></li> <!--Used to be named Buffets -->
                 <li><router-link to="/faq">FAQ</router-link></li>
                 <li><router-link to="/post">Post</router-link></li>
+                <li><router-link to="/about">About Us</router-link></li>
              </ul>
           </div>
        </div>
