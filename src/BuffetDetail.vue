@@ -7,12 +7,23 @@
     <p>Buffet still available: {{buffet.open}}</p>
 
     <p>Clearing time: {{buffet.time.toLocaleString()}}</p>
+    <button v-on:click="deleteBuffet">Delete</button>
   </div>
 </template>
 
 <script>
+import db from "./datab";
+
 export default {
   name: "buffet-detail",
-  props: ["buffet"]
+  props: ["buffet", "buffetId"],
+  methods: {
+    deleteBuffet() {
+      db
+        .collection("Buffets")
+        .doc(this.buffetId)
+        .delete();
+    }
+  }
 };
 </script>
