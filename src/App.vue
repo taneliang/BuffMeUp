@@ -23,6 +23,7 @@
     </div>
     <div class="container" style="padding-top: 65px;">
       <buffets></buffets>
+      <subform></subform>
       <faq></faq>
     </div>
   </div>
@@ -31,9 +32,10 @@
 <script>
 import Faq from "./Faq.vue";
 import Buffets from "./Buffets.vue";
+import SubmissionForm from "./SubmissionForm.vue";
 
 export default {
   name: "app",
-  components: { Faq, Buffets }
+  components: { Faq, Buffets, subform: SubmissionForm }
 };
 </script>
