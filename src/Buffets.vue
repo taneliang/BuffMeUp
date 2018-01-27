@@ -1,14 +1,13 @@
 <template>
   <div id="buffets">
     <h2>===Available Buffets===</h2>
-    <buffet-detail v-for="buffet in buffets" v-bind:buffet="buffet" v-bind:key="buffet.id"></buffet-detail>
+    <!-- Buffets here -->
+    <p>{{ buffets.length }}</p>
   </div>
 </template>
 
 <script>
 import db from "./datab";
-import BuffetDetail from "./BuffetDetail.vue";
-
 export default {
   name: "buffets",
   data() {
@@ -21,7 +20,6 @@ export default {
     return {
       buffets: []
     };
-  },
-  components: { BuffetDetail }
+  }
 };
 </script>
