@@ -6,6 +6,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "firebase": "^4.9.0",
+    "parcel-bundler": "^1.5.1",
     "vue": "^2.5.13"
   }
 }
