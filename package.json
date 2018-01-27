@@ -1,11 +1,15 @@
 {
   "name": "hax",
+  "scripts": {
+    "start": "parcel index.html"
+  },
   "version": "0.0.1",
   "main": "index.js",
   "repository": "git@github.com:taneliang/hax.git",
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "parcel-bundler": "^1.5.1",
     "vue": "^2.5.13"
   }
 }
