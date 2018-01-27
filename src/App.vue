@@ -13,7 +13,7 @@
           </div>
           <div class="collapse navbar-collapse" id="collapse-menu">
              <ul class="nav navbar-nav">
-                <li><a href="#today">Today</a></li>
+                <li><a href="#buffets">Today</a></li> <!-- #buffets should be renamed to #today -->
                 <li><a href="#history">History</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#post">Post</a></li>
