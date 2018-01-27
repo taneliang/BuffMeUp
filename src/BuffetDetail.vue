@@ -7,6 +7,6 @@
 <script>
 export default {
   name: "buffet-detail",
-  props: ['buffet'],
+  props: ["buffet"]
 };
 </script>
