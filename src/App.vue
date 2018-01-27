@@ -21,8 +21,10 @@
           </div>
        </div>
     </div>
-    <buffets></buffets>
-    <faq></faq>
+    <div class="container" style="padding-top: 65px;">
+      <buffets></buffets>
+      <faq></faq>
+    </div>
   </div>
 </template>
 
