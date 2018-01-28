@@ -9,7 +9,7 @@
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
              </button>
-             <a class="navbar-brand" href="#info">BuffMeUp</a>
+             <router-link class="navbar-brand" to="/">BuffMeUp</router-link>
           </div>
           <div class="collapse navbar-collapse" id="collapse-menu">
              <ul class="nav navbar-nav">
