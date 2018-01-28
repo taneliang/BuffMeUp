@@ -1,7 +1,8 @@
 {
   "name": "hax",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url ./"
   },
   "version": "0.0.1",
   "main": "index.js",
