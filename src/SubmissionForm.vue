@@ -108,7 +108,6 @@
       -->
 
       <button type="submit" v-on:click="onSubmit" class="btn btn-primary">Submit</button>
-
     </form>
   </div>
   </div>
@@ -132,11 +131,12 @@ export default {
       }
 
       if (valid) {
-        const exphrs = parseInt(this.exptimehrs);
-        const expmins = parseInt(this.exptimehrs);
+        const exphrs = parseFloat(this.exptimehrs);
+        const expmins = parseFloat(this.exptimemins);
         const expdate = new Date();
         expdate.setHours(exphrs);
         expdate.setMinutes(expmins);
+        expdate.setSeconds(0);
         // ===================THIS IS A CONSOLE LOG============================================
         console.log(
           this.exptimehrs,

@@ -1,14 +1,14 @@
 <template>
   <div id="about">
     <!-- FAQ here -->
-    <h2>About Us</h2> </br>
+    <h2>About Us</h2>
     <h3>What is BuffMeUp? </h3>
-      <p>BuffMeUp is an initiative to reduce food wastage of buffets in Singapore
-      while filling the stomachs of peckish people.<br> It's a win-win situation.</p><br>
+      <p>BuffMeUp is an initiative to reduce food wastage from buffets
+      while filling the stomachs of peckish people in Singapore.<br> It's a win-win situation.</p>
 
     <h3>How does it work?</h3>
       <p>If someone finds their buffet has way too much leftover food for them
-        to possibly consume by themeselves, they can make a post on BuffMeUp.<br>
+        to possibly consume by themselves, they can make a post on BuffMeUp.<br>
 
         Their buffet will then be visible on our "Today" page and potential
         buffet helpers will be able to respond to the culinary call to arms.<br>
