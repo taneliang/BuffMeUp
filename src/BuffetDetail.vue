@@ -25,10 +25,10 @@
           </div>
           <div class="card-body" style="padding: 10px 10px 10px 10px;">
             <p class="card-title" style="font-family: raleway, monospace;">Description: {{ buffet.description }}</p>
-            <p style="font-family: raleway, monospace;">Food Halal? {{buffet.halal}}</p>
-            <p style="font-family: raleway, monospace;">Cultery Available? {{buffet.halal}}</p>
-            <p style="font-family: raleway, monospace;">Amount of food left (0-1): {{buffet.foodremaining}}%</p>
-            <p style="font-family: raleway, monospace;">Buffet still available: {{buffet.open}}</p>
+            <p style="font-family: raleway, monospace;">Food Halal? {{this.tfConverter(buffet.halal)}}</p>
+            <p style="font-family: raleway, monospace;">Cultery Available? {{this.tfConverter(buffet.cutlery)}}</p>
+            <p style="font-family: raleway, monospace;">Amount of food left: {{buffet.foodremaining}}%</p>
+            <p style="font-family: raleway, monospace;">Buffet still available: {{this.tfConverter(buffet.open)}}</p>
             <p style="font-family: raleway, monospace;">Clearing time: {{this.toDateDisplayString(buffet.expirytiming)}}</p>
             <button v-on:click="deleteBuffet">Delete</button>
           </div>
@@ -50,6 +50,9 @@ export default {
   name: "buffet-detail",
   props: ["buffet", "buffetId", "displayDate"],
   methods: {
+    tfConverter(bool) {
+      return bool ? "✔" : "✖";
+    },
     toDateDisplayString(date) {
       return this.displayDate
         ? date.toLocaleString()
