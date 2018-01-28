@@ -16,7 +16,7 @@
       <div id="buffet">
         <!--Panel-->
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="card" style="max-width: 500px;">
+          <div class="card" style="max-width: 500px; max-height: 690px;">
             <div class="card-header deep-orange lighten-1 white-text" style="padding-left: 7px;
             padding-right: 5px;">
 
