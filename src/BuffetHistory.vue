@@ -18,7 +18,7 @@ export default {
       buffets: [],
       queryUnsubscribe: db
         .collection("Buffets")
-        .where("time", "<", new Date())
+        .where("expirytiming", "<", new Date())
         .onSnapshot(
           querySnapshot =>
             (this.buffets = querySnapshot.docs.map(d => ({
