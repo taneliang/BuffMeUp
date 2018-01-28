@@ -1,6 +1,5 @@
 <template>
   <div id="buffet">
-    <h3>Buffet des {{ buffet.description }}</h3>
     <h3>Buffet Name: {{ buffet.description }}</h3>
     <p>Location: {{buffet.location}}</p>
     <p>Is food halal: {{buffet.halal}}</p>
