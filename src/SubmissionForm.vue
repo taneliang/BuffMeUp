@@ -116,6 +116,7 @@
 
 <script>
 import db from "./datab";
+import router from "./router";
 
 export default {
   name: "subform",
@@ -160,6 +161,7 @@ export default {
           })
           .then(function(docRef) {
             alert("Buffet successfully added! ID:", docRef.id);
+            router.push({ path: "/" });
           })
           .catch(function(error) {
             console.error("Error writing document: ", error);
