@@ -1,3 +1,4 @@
+
 <template>
   <!--
   <div id="buffet">
@@ -11,8 +12,7 @@
 
   </div>
   -->
-  <div class="container">
-    <div class="row">
+
       <div id="buffet">
         <!--Panel-->
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -37,11 +37,12 @@
       <!--/.Panel-->
 
     </div>   <!-- End buffet -->
-  </div> <!-- End row -->
-</div> <!-- End container -->
+
 
 
 </template>
+
+
 
 <script>
 import db from "./datab";

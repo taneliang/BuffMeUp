@@ -1,8 +1,13 @@
 <template>
-  <div id="buffets">
-    <h2>===Available Buffets===</h2>
-    <buffet-detail v-for="buffet in buffets" v-bind:buffet="buffet.obj" v-bind:buffet-id="buffet.id" v-bind:key="buffet.id"></buffet-detail>
-  </div>
+  <div class="container">
+    <div class="row">
+     <div id="buffets">
+       <h2>===Available Buffets===</h2>
+       <buffet-detail v-for="buffet in buffets" v-bind:buffet="buffet.obj" v-bind:buffet-id="buffet.id" v-bind:key="buffet.id"></buffet-detail>
+     </div>
+     <div class="clearfix visible-sm-block"></div>
+   </div> <!-- End row -->
+</div> <!-- End container -->
 </template>
 
 <script>
