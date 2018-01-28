@@ -89,6 +89,11 @@
 
         -->
 
+      <div class="upload-image">
+            <label>Upload image of buffet</label>
+            <input name="myFile" type="file" v-on:change="onFileChange">
+      </div>
+
       <div class="form-group">
           <label for="desc">Food Description*</label>
           <textarea class="form-control" v-model="desc" id="desc" rows="3"></textarea>
@@ -116,10 +121,16 @@
 
 <script>
 import db from "./datab";
+import imgur from "./imgur";
 
 export default {
   name: "subform",
   methods: {
+    onFileChange(e) {
+      console.log(e);
+      this.importImage = e.target.value;
+    },
+
     onSubmit(e) {
       e.preventDefault();
       let valid;
@@ -141,21 +152,28 @@ export default {
           exphrs,
           this.exptimemins,
           expmins,
-          expdate
+          expdate,
+          this.importImage
         );
-        db
-          .collection("Buffets")
-          .add({
-            description: this.desc,
-            location: this.location,
-            halal: this.is_halal,
-            open: true,
-            foodremaining: parseFloat(this.foodrem),
-            time: new Date(),
-            expirytiming: expdate
-          })
-          .then(function(docRef) {
-            alert("Buffet successfully added! ID:", docRef.id);
+        imgur
+          .uploadFile(this.importImage)
+          .then(function(json) {
+            console.log(json);
+            db
+              .collection("Buffets")
+              .add({
+                description: this.desc,
+                location: this.location,
+                halal: this.is_halal,
+                open: true,
+                foodremaining: parseFloat(this.foodrem),
+                time: new Date(),
+                expirytiming: expdate,
+                image: json.data.link
+              })
+              .then(function(docRef) {
+                alert("Buffet successfully added! ID:", docRef.id);
+              });
           })
           .catch(function(error) {
             console.error("Error writing document: ", error);
