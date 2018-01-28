@@ -1,21 +1,22 @@
 <template>
-  <!-- 
+  <!--
   <div id="buffet">
     <h3>Buffet Name: {{ buffet.description }}</h3>
     <p>Location: {{buffet.location}}</p>
     <p>Is food halal: {{buffet.halal}}</p>
     <p>Amount of food left (0-1): {{buffet.foodremaining}}</p>
     <p>Buffet still available: {{buffet.open}}</p>
-    <p>Posted at: {{buffet.time.toLocaleString()}}</p>
-    <p>Clearing time: {{buffet.expirytiming.toLocaleString()}}</p>
+
+    <p>Clearing time: {{buffet.time.toLocaleString()}}</p>
+    <button v-on:click="deleteBuffet">Delete</button>
   </div>
   -->
-  
+
      <div class="container">
       <div class="row">
          <div id="buffet">
-            
-            <!--Panel-->     
+
+            <!--Panel-->
             <div class="col-sm-6">
                <div class="card" style="max-width: 500px;">
                   <div class="card-header deep-orange lighten-1 white-text" style="padding-left: 7px;
@@ -31,19 +32,29 @@
                      <p style="font-family: raleway, monospace;">Clearing time: {{buffet.expirytiming.toLocaleString()}}</p>
                   </div>
                </div>
-            </div> 
+            </div>
             <!--/.Panel-->
-            
-         </div>   <!-- End buffet --> 
+
+         </div>   <!-- End buffet -->
       </div> <!-- End row -->
    </div> <!-- End container -->
-  
-  
+
+
 </template>
 
 <script>
+import db from "./datab";
+
 export default {
   name: "buffet-detail",
-  props: ["buffet"]
+  props: ["buffet", "buffetId"],
+  methods: {
+    deleteBuffet() {
+      db
+        .collection("Buffets")
+        .doc(this.buffetId)
+        .delete();
+    }
+  }
 };
 </script>
