@@ -1,7 +1,7 @@
 <template>
   <div id="history">
     <h1>Past Buffets</h1>
-    <buffet-detail v-for="buffet in buffets" v-bind:buffet="buffet.obj" v-bind:buffet-id="buffet.id" v-bind:key="buffet.id"></buffet-detail>
+    <buffet-detail v-for="buffet in buffets" display-date = "true" v-bind:buffet="buffet.obj" v-bind:buffet-id="buffet.id" v-bind:key="buffet.id"></buffet-detail>
   </div>
 </template>
 
