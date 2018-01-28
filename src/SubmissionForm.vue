@@ -121,25 +121,24 @@
 
 <script>
 import db from "./datab";
-import imgur from "./imgur";
+import postImage from "./imgur";
 
 export default {
   name: "subform",
   methods: {
     onFileChange(e) {
-      console.log(e);
-      this.importImage = e.target.value;
+      this.importImage = e.target.files[0];
     },
 
     onSubmit(e) {
       e.preventDefault();
-      let valid;
-      if (this.location && this.exptimehrs) {
-        valid = true;
-      } else {
-        console.log(this.location, this.exptimehrs);
-        valid = false;
-      }
+      let valid = true;
+      // if (this.location && this.exptimehrs) {
+      //   valid = true;
+      // } else {
+      //   console.log(this.location, this.exptimehrs);
+      //   valid = false;
+      // }
 
       if (valid) {
         const exphrs = parseInt(this.exptimehrs);
@@ -155,29 +154,31 @@ export default {
           expdate,
           this.importImage
         );
-        imgur
-          .uploadFile(this.importImage)
-          .then(function(json) {
-            console.log(json);
-            db
-              .collection("Buffets")
-              .add({
-                description: this.desc,
-                location: this.location,
-                halal: this.is_halal,
-                open: true,
-                foodremaining: parseFloat(this.foodrem),
-                time: new Date(),
-                expirytiming: expdate,
-                image: json.data.link
-              })
-              .then(function(docRef) {
-                alert("Buffet successfully added! ID:", docRef.id);
-              });
-          })
-          .catch(function(error) {
-            console.error("Error writing document: ", error);
-          });
+        postImage(this.importImage)
+//          .then(function(json) {
+//            console.log(json);
+//             db
+//               .collection("Buffets")
+//               .add({
+//                 description: this.desc,
+//                 location: this.location,
+//                 halal: this.is_halal,
+//                 open: true,
+//                 foodremaining: parseFloat(this.foodrem),
+//                 time: new Date(),
+//                 expirytiming: expdate,
+//                 image: json.data.link
+//               })
+//               .then(function(docRef) {
+//                 alert("Buffet successfully added! ID:", docRef.id);
+//               })
+//               .catch(function(error) {
+//                 console.error("Error writing document: ", error);
+//               });
+       //   })
+       //   .catch(function(error) {
+        //    console.error("Error uploading pit: ", error);
+        //  });
       } else {
         alert("Missing key information!");
       }
