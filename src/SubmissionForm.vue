@@ -67,7 +67,7 @@
 
       <div class="form-check">
             <label class="form-check-label" for="halal">Cultery Available?</label>
-            <input type="checkbox" v-model="cultery" class="form-check-input" id="cultery">
+            <input type="checkbox" v-model="has_cutlery" class="form-check-input" id="cultery">
       </div>
 
       <!--
@@ -136,19 +136,23 @@ export default {
         const expdate = new Date();
         expdate.setHours(exphrs);
         expdate.setMinutes(expmins);
+        // ===================THIS IS A CONSOLE LOG============================================
         console.log(
           this.exptimehrs,
           exphrs,
           this.exptimemins,
           expmins,
-          expdate
+          expdate,
+          this.is_halal,
+          this.has_cutlery
         );
         db
           .collection("Buffets")
           .add({
             description: this.desc,
             location: this.location,
-            halal: this.is_halal,
+            halal: this.is_halal || false,
+            cutlery: this.has_cutlery || false,
             open: true,
             foodremaining: parseFloat(this.foodrem),
             time: new Date(),

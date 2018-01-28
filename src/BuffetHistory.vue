@@ -16,13 +16,16 @@ export default {
   data() {
     return {
       buffets: [],
-      queryUnsubscribe: db.collection("Buffets").onSnapshot(
-        querySnapshot =>
-          (this.buffets = querySnapshot.docs.map(d => ({
-            id: d.id,
-            obj: d.data()
-          })))
-      )
+      queryUnsubscribe: db
+        .collection("Buffets")
+        .where("time", "<", new Date())
+        .onSnapshot(
+          querySnapshot =>
+            (this.buffets = querySnapshot.docs.map(d => ({
+              id: d.id,
+              obj: d.data()
+            })))
+        )
     };
   },
   destroyed() {
